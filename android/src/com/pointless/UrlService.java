@@ -1,6 +1,8 @@
 package com.pointless;
 
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,11 +12,12 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
+import retrofit2.http.Url;
 
 
 public interface UrlService {
     @GET("exercises/2")
-    Call<ExerciseData> getJsonData( @Query("format") String sort);
+    Call<ExerciseData> getJsonData( @Query("fprmat") String sort);
 
 
     @POST("exercises/1")

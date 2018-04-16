@@ -38,7 +38,7 @@ public class image extends Game {
 	public void render () {
 		super.render();
 		if (CommonObjects.urlHandler.getExercise() != null) {
-			exerciseData = CommonObjects.urlHandler.getExercise();
+			exerciseData = new ExerciseData( CommonObjects.urlHandler.getExercise()) ;
 		this.setScreen(new Display(this , exerciseData));
 		}
 			batch.begin();

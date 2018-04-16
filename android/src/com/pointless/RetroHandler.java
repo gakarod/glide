@@ -27,8 +27,10 @@ public class RetroHandler implements UrlHandler {
         call.enqueue(new Callback<ExerciseData>() {
             @Override
             public void onResponse(Call<ExerciseData>call, Response<ExerciseData> response) {
+
                 setExercise(response.body());
-                Log.v("data", exercise.getImageUrls().toString());
+
+                Log.v("data gotten wooohohohh", exercise.getImageUrls().toString());
 
                 exerciseDownloaded = true;
 
@@ -61,6 +63,7 @@ public class RetroHandler implements UrlHandler {
     public void setExercise(ExerciseData object){
 
         exercise = new ExerciseData(object);
+//        exercise.image_urls = object.image_urls;
         Log.v("instance", "yay");
         Log.v("object", exercise.toString());
 
