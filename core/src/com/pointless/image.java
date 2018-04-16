@@ -15,10 +15,6 @@ public class image extends Game {
 	public SpriteBatch batch;
 	public BitmapFont font;
 	public ExerciseData exerciseData;
-	private int imageCounter;
-	private Texture texture;
-	private boolean textureLoaded = false;
-	private String[] url;
 
 
 	public image(ImageLoaderCore imageLoader, UrlHandler urlHandler )
@@ -41,8 +37,6 @@ public class image extends Game {
 	@Override
 	public void render () {
 		super.render();
-		Gdx.gl.glClearColor(1, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		if (CommonObjects.urlHandler.getExercise() != null) {
 			exerciseData = CommonObjects.urlHandler.getExercise();
 		this.setScreen(new Display(this , exerciseData));
@@ -52,21 +46,9 @@ public class image extends Game {
 			batch.end();
 		}
 
-	private void nextImage() {
-		if(imageCounter<url.length) {
-			CommonObjects.imageLoader.loadImage(url[imageCounter], Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
-
-			//	else {
-//			getImageArray();
-			//	}
-			imageCounter++;
-		}
-
-	}
 	@Override
 	public void dispose () {
 		batch.dispose();
-		texture.dispose();
 	}
 }

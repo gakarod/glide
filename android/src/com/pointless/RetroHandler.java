@@ -17,7 +17,7 @@ public class RetroHandler implements UrlHandler {
     public void callServer() {
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://blackboardradio.kebwfmajiq.ap-south-1.elasticbeanstalk.com/exercises/2/?format=json")
+                .baseUrl("http://blackboardradio.kebwfmajiq.ap-south-1.elasticbeanstalk.com/exercises/2/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -28,7 +28,7 @@ public class RetroHandler implements UrlHandler {
             @Override
             public void onResponse(Call<ExerciseData>call, Response<ExerciseData> response) {
                 setExercise(response.body());
-          //      Log.v("data", exercise.getWords().toString());
+                Log.v("data", exercise.getImageUrls().toString());
 
                 exerciseDownloaded = true;
 
@@ -52,7 +52,7 @@ public class RetroHandler implements UrlHandler {
     public ExerciseData getExercise() {
         if (exerciseDownloaded) return exercise;
         else {
-            //System.exit(0);
+           // System.exit(0);
         return null;
 
     }

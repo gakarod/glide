@@ -14,7 +14,8 @@ public class ExerciseData {
 
     public ExerciseData(ExerciseData old){
 
-        this.image_urls = old.getImageUrls();
+        this.image_urls =  old.getImageUrls();
+        
     }
 
     public ExerciseData() {
@@ -23,7 +24,12 @@ public class ExerciseData {
 
 
 
-    public String[] getImageUrls(){ return  image_urls;}
+    public String[] getImageUrls(){
+        if(image_urls[0].equals(null))
+            return null ;
+        else
+           return  image_urls;
+    }
 
 
     public String[] getWords(){ return  words;}

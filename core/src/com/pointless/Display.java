@@ -24,27 +24,24 @@ public class Display implements Screen {
         this.exercise = exerciseData;
         url = exercise.getImageUrls();
         imageCounter = 0;
-        nextImage();
+
         CommonObjects.imageLoader.setOnImageLoadedListener(new OnImageLoaded() {
             @Override
             public void setTexture() {
                 textureLoaded = true;
             }
         });
+        nextImage();
     }
 
     private void nextImage() {
         if(imageCounter<url.length) {
             CommonObjects.imageLoader.loadImage(url[imageCounter], Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-
-
-            //	else {
-//			getImageArray();
-            //	}
             imageCounter++;
         }
 
     }
+
     @Override
     public void show() {
 
@@ -52,9 +49,14 @@ public class Display implements Screen {
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(1, 1, 1, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+    //    Gdx.gl.glClearColor(1, 1, 1, 1);
+     //   Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         game.batch.begin();
+        if (textureLoaded) {
+            texture = CommonObjects.imageLoader.getImage();
+            textureLoaded = false;
+        }
+
         if (texture != null) {
             game.batch.draw(texture, 0, 0);
         }
