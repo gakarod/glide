@@ -8,19 +8,26 @@ import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
+import com.google.firebase.FirebaseApp;
 import com.pointless.image;
 
 import static android.Manifest.permission.RECORD_AUDIO;
 
 public class AndroidLauncher extends AndroidApplication {
 	ImageLoader imageLoader;
+	ExerciseData exercise ;
+	image imagestart ;
+
+	AndroidApplicationConfiguration config;
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
+		FirebaseApp.initializeApp(this);
+		config = new AndroidApplicationConfiguration();
 		RetroHandler urlHandler = new RetroHandler();
 		imageLoader = new ImageLoader(this);
-		initialize(new image(imageLoader,urlHandler), config);
+		imagestart = new image(imageLoader,urlHandler) ;
+		initialize(imagestart, config);
 	}
 	@Override
 	public void onRequestPermissionsResult(int requestCode, String permissions[],

@@ -19,7 +19,8 @@ buildscript {
         classpath 'com.github.bumptech.glide:glide:4.6.1'
         classpath 'com.github.bumptech.glide:compiler:4.6.1'
         classpath 'com.android.support:recyclerview-v7:27.0.2'
-
+        classpath 'com.google.firebase:firebase-config:11.8.0'
+        classpath 'com.google.firebase:firebase-auth:11.8.0'
     }
 }
 
@@ -68,6 +69,8 @@ project(":android") {
         compile 'com.github.bumptech.glide:glide:4.6.1'
         annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
         compile 'com.android.support:recyclerview-v7:27.0.2'
+        compile 'com.google.firebase:firebase-config:11.8.0'
+        compile 'com.google.firebase:firebase-auth:11.8.0'
     }
 }
 

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "994948718905",
+    "firebase_url": "https://image-10120.firebaseio.com",
+    "project_id": "image-10120",
+    "storage_bucket": "image-10120.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994948718905:android:76d4c46f9098874c",
+        "android_client_info": {
+          "package_name": "com.pointless"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994948718905-otvfv9rdbcp7hb1s6ohm0voebtkj8ndr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pointless",
+            "certificate_hash": "117b4c653bf0dc541f6080557b5b236d7a18ad5c"
+          }
+        },
+        {
+          "client_id": "994948718905-a3of8ai599jo3371iqdoiesv1n3hp3ui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe9HjS8F9md9dINxysnT2zFB9EdRqsDbI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994948718905-a3of8ai599jo3371iqdoiesv1n3hp3ui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
