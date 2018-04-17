@@ -13,17 +13,18 @@ import com.badlogic.gdx.graphics.Texture;
 public class Display implements Screen {
 
     public final image game;
-    public static int imageCounter;
+    public  int imageCounter = 0;
     private String[] url;
     private Texture texture;
     private ExerciseData exercise;
     private boolean textureLoaded = false;
+    int j = 0 ;
 
     public Display(final image game,ExerciseData exerciseData){
         this.game = game;
         this.exercise = exerciseData;
         url = exercise.getImageUrls();
-        imageCounter = 0;
+
 
         CommonObjects.imageLoader.setOnImageLoadedListener(new OnImageLoaded() {
             @Override
@@ -31,14 +32,17 @@ public class Display implements Screen {
                 textureLoaded = true;
             }
         });
-        nextImage();
+        //nextImage();
     }
 
     private void nextImage() {
-        if(imageCounter<url.length) {
-            CommonObjects.imageLoader.loadImage(url[imageCounter], Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        if( Gdx.input.isTouched()) {
             imageCounter++;
         }
+
+            CommonObjects.imageLoader.loadImage(url[imageCounter]);
+        texture = CommonObjects.imageLoader.getImage();
+
 
     }
 
@@ -49,17 +53,15 @@ public class Display implements Screen {
 
     @Override
     public void render(float delta) {
-    //    Gdx.gl.glClearColor(1, 1, 1, 1);
-     //   Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
         game.batch.begin();
-        if (textureLoaded) {
-            texture = CommonObjects.imageLoader.getImage();
-            textureLoaded = false;
-        }
+        nextImage();
+
 
         if (texture != null) {
             game.batch.draw(texture, 0, 0);
         }
+        game.batch.end();
     }
 
     @Override
@@ -84,6 +86,6 @@ public class Display implements Screen {
 
     @Override
     public void dispose() {
-
+texture.dispose();
     }
 }

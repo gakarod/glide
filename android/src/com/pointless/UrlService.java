@@ -16,7 +16,7 @@ import retrofit2.http.Url;
 
 
 public interface UrlService {
-    @GET("exercises/2")
+    @GET("exercises/3")
     Call<ExerciseData> getJsonData( @Query("fprmat") String sort);
 
 

@@ -17,7 +17,7 @@ public class RetroHandler implements UrlHandler {
     public void callServer() {
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://blackboardradio.kebwfmajiq.ap-south-1.elasticbeanstalk.com/exercises/2/")
+                .baseUrl("http://blackboardradio.kebwfmajiq.ap-south-1.elasticbeanstalk.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

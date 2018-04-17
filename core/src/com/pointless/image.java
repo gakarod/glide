@@ -38,12 +38,12 @@ public class image extends Game {
 	public void render () {
 		super.render();
 		if (CommonObjects.urlHandler.getExercise() != null) {
-			exerciseData = new ExerciseData( CommonObjects.urlHandler.getExercise()) ;
+			exerciseData = CommonObjects.urlHandler.getExercise() ;
 		this.setScreen(new Display(this , exerciseData));
 		}
-			batch.begin();
+
 //			batch.draw(texture, 0, 0);
-			batch.end();
+
 		}
 
 
